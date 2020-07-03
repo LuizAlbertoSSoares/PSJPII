@@ -1,0 +1,47 @@
+CREATE TABLE `sce_configuracao` (
+  `campanha` int(2) NOT NULL,
+  `descricao` varchar(30) NOT NULL,
+  `total_parcelas` int(2) NOT NULL,
+  `valor_parcela` double(12,2) NOT NULL,
+  `valor_parcela_unica` double(12,2) NOT NULL,
+  `instituicao` varchar(70) NOT NULL,
+  `hdr_data` date NOT NULL,
+  `hdr_hora` int(6) NOT NULL,
+  `hdr_usuario` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO sce_configuracao (campanha, descricao, total_parcelas, valor_parcela, valor_parcela_unica,
+                              instituicao, hdr_data, hdr_hora, hdr_usuario)
+            VALUES (8, 'VIII Campanha', 12, 60, 600,
+				           'MITRA ARQUIDIOCESANA DE BRASILIA/Parôquia Nossa Senhora da Assunção',
+				           '2013-11-26', 203600, 'José Maria')
+						   
+UPDATE sce_premios SET PRM_ID_EVENTO = 8;
+ALTER TABLE sce_premios DROP PRM_CD_VENCEDOR;
+ALTER TABLE sce_premios DROP PRM_TESTEMUNHA_1;
+ALTER TABLE sce_premios DROP PRM_TESTEMUNHA_2;
+ALTER TABLE sce_premios DROP PRM_AUDITOR_1;
+ALTER TABLE sce_premios DROP PRM_AUDITOR_2;
+ALTER TABLE sce_premios DROP PRM_CPF_TESTEMUNHA_1;
+ALTER TABLE sce_premios DROP PRM_CPF_TESTEMUNHA_2;
+ALTER TABLE sce_premios DROP PRM_CPF_AUDITOR_1;
+ALTER TABLE sce_premios DROP PRM_CPF_AUDITOR_2;
+ALTER TABLE sce_premios DROP PRM_QUOTA_VENCEDOR;
+						   
+
+CREATE TABLE salva_2013_sce_quota (select * from sce_quota);
+CREATE TABLE salva_2013_sce_titulo (select * from sce_titulo);
+CREATE TABLE salva_2013_sce_arquivo (select * from sce_arquivo);
+
+DELETE FROM sce_quota;
+DELETE FROM sce_titulo;
+DELETE FROM sce_arquivo WHERE BAN_ID = 1 AND ARQ_NSA < 2052;
+DELETE FROM sce_arquivo WHERE BAN_ID = 2 AND ARQ_NSA < 545;
+DELETE FROM sce_arquivo WHERE BAN_ID = 3 AND ARQ_NSA < 328;
+
+ALTER TABLE sce_quota DROP QUO_STATUS;
+ALTER TABLE sce_quota DROP QUO_DATA_ATIVA_INATIVA;
+ALTER TABLE sce_quota DROP QUO_OBS;
+ALTER TABLE sce_quota DROP QUO_DATA_FORMA_PAGAMENTO;
+ALTER TABLE sce_quota DROP QUO_DATA_ALTERACAO_TITULARIDADE;
+ALTER TABLE sce_quota DROP QUO_OBS_ALTERACAO_TITULARIDADE;

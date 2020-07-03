@@ -1,0 +1,430 @@
+<html><head><title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link  href="css/jquery-ui.css"  rel="stylesheet" type="text/css"/>
+<script src="javascript/jquery.min.js"></script>
+<script src="javascript/jquery-ui.min.js"></script>
+<script src="javascript/jquery-ui.datepicker.js"></script>
+<script type="text/javascript" src="javascript/PrintArea.js"></script>
+<script src="javascript/jquery.price_format.1.8.min.js"></script>
+
+<script language="javascript" type="text/javascript" src="tiny_mce/tiny_mce.js"> </script>
+<script language="javascript" type="text/javascript">tinyMCE.init({mode : "textareas",theme : "advanced"});</script>
+
+
+<style type="text/css">
+body{
+    font-family: Arial, Verdana, Tahoma, Sans-Serif;
+    color: #333333;
+    font-size: 12px;
+} 
+
+.i3Style{
+	font:normal 11px Verdana, Geneva, sans-serif;
+	font-style:normal;
+	color:#2010d1;
+	color: navy;
+	width:140px;
+	padding:2px 30px;
+	cursor:pointer;
+	margin:5 auto;
+}
+.i3Style:active{
+	cursor:pointer;
+	position:relative;
+	top:2px;
+}
+
+.ui-widget {font-size: 10px;}
+
+#divPrincipal {
+	margin:0 auto;   
+	margin:0 auto;         
+	text-align:left; /* "remédio" para o hack do IE */ 
+	overflow: auto;
+    font-size: 0.95em;
+    width: 950px;
+	background	:#fff url("img/bgMain.gif") repeat;
+}
+
+#divControle {
+	overflow: auto;
+    font-size: 0.95em;
+    width: 949px;
+	height: 060px;
+	background-color:#FFFFFF;
+}
+#divLogoMarca {
+    font-size: 0.95em;
+    width: 213px;
+	height: 50px;
+	background	:#fff url("img/logoFinanceiro.png") no-repeat;
+}
+#divEmpresa {
+    font-size: 0.95em;
+    width: 540px;
+	height: 50px;
+	background-color:#FFFFFF;
+}
+#divVersao {
+    font-size: 0.95em;
+    width: 165px;
+	height: 50px;
+	background-color:#FFFFFF;
+}
+
+#divCentro {
+	overflow: auto;
+    border: 1px solid #999999;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 0.95em;
+    width: 720px;
+	height: 505px;
+	background-color:#FFFFFF;
+}
+#divRodape {
+	overflow: auto;
+    border: 0px solid #999999;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 0.95em;
+    width: 950px;
+	height: 15px;
+	background-color:#FFFFFF;
+	background	:#fff url("img/bgMain.gif") repeat;
+	text-align:center;
+	color: green;
+}
+
+#divAtalhos {
+	overflow: auto;
+    border: 1px solid #999999;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 0.95em;
+    width: 215px;
+	height: 505px;
+	background-color:#FFFFFF;
+	background	:#fff url("img/bgMain.gif") repeat;
+}
+
+ul {list-style-type: square;}
+
+.tdConsulta {
+	border-bottom:1px solid silver;
+	font-size: 0.80em;
+}
+
+.cor1 { background-color: #efefef;}
+.cor2 {	background-color: #ccc;}
+.cor3 {	background-color: #9bbcff;} /* azul     */
+.cor4 {	background-color: #ff9191;} /* vermelho */
+
+.fonte1 {color: white;}
+.fonteAzul {color: #9bbcff;}
+.destaque{background:#FFFF99;color:#FF0000;}
+.fontEmpresa {
+        color: #c0c0c0;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0;
+        font-family: "Palatino Linotype, Book Antiqua, Palatino, serif";
+}
+
+#tbNormal {
+    border: 1px solid #999999;
+    font-size: 0.95em;
+    width: 100%px;
+	background-color:#FFFFFF;
+}
+.inputPesquisa{
+    background: url("img/inputPesquisa.png") no-repeat scroll -20px -20px transparent;
+    border: medium none;
+    font-size: 1.1em;
+    padding: 4px 10px;
+    width: 382px;
+	height: 32px;
+}
+
+.tbNormal	  	{FONT-SIZE: 12px; COLOR: black; LINE-HEIGHT: 13px; FONT-FAMILY: Tahoma; width:100%;}
+.inputNumero {
+ TEXT-ALIGN			: RIGHT;
+ BORDER-TOP			: #999999 1px solid;
+ BORDER-RIGHT		: #999999 1px solid;
+ BORDER-BOTTOM		: #999999 1px solid;
+ BORDER-LEFT		: #999999 1px solid;
+ FONT-WEIGHT		: bold;
+ FONT-SIZE			: 11px;
+ FONT-FAMILY		: Tahoma;
+ COLOR				: #666666;
+ PADDING-TOP		: 4px;
+ HEIGHT				: 20px;
+ BACKGROUND-COLOR	: #f5f5f5
+}
+
+ul.topnav {
+    display : block;
+	list-style: none;
+	padding: 0 20px;
+	margin: 0;
+	float: left;
+	width: 910px;
+	background: #222;
+	font-size: 1.2em;
+	background: url(img/topnav_bg.gif) repeat-x
+}
+ul.topnav li {
+	float: left;
+	margin: 0;
+	padding: 0 15px 0 0;
+	position: relative; /*--Declare X and Y axis base--*/
+}
+ul.topnav li a{
+	padding: 10px 5px;
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	float: left;
+}
+ul.topnav li a:hover{
+	background: url(img/topnav_hover.gif) no-repeat center top;
+}
+ul.topnav li span { /*--Drop down trigger styles--*/
+	width: 17px;
+	height: 35px;
+	float: left;
+	background: url(img/subnav_btn.gif) no-repeat center top;
+}
+ul.topnav li span.subhover {background-position: center bottom; cursor: pointer;} /*--Hover effect for trigger--*/
+ul.topnav li ul.subnav {
+	list-style: none;
+	position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+	left: 0; top: 35px;
+	background: #333;
+	margin: 0; padding: 0;
+	display: none;
+	float: left;
+	width: 170px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	border: 1px solid #111;
+}
+ul.topnav li ul.subnav li{
+	margin: 0; padding: 0;
+	border-top: 1px solid #252525; /*--Create bevel effect--*/
+	border-bottom: 1px solid #444; /*--Create bevel effect--*/
+	clear: both;
+	width: 170px;
+}
+html ul.topnav li ul.subnav li a {
+	float: left;
+	width: 145px;
+	background: #333 url(img/dropdown_linkbg.gif) no-repeat 10px center;
+	padding-left: 20px;
+}
+html ul.topnav li ul.subnav li a:hover { /*--Hover effect for subnav links--*/
+	background: #222 url(img/dropdown_linkbg.gif) no-repeat 10px center;
+}
+
+</style>
+<script type='text/javascript'>
+
+	$(function() {
+	
+	$.datepicker.regional['pt-BR'] = {
+		closeText: 'Fechar',
+		prevText: 'Anterior',
+		nextText: 'Próximo',
+		currentText: 'Hoje',
+		monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho',
+		'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+		monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun',
+		'Jul','Ago','Set','Out','Nov','Dez'],
+		dayNames: ['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sabado'],
+		dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+		dayNamesMin: ['Dom','Seg','Ter','Qua','Qui','Sex','Sab'],
+		weekHeader: 'Sm',
+		dateFormat: 'dd/mm/yy',
+		firstDay: 0,
+		isRTL: false,
+		showMonthAfterYear: false,
+		yearSuffix: ''};
+
+		$.datepicker.setDefaults($.datepicker.regional['pt-BR']);
+		$( "#datepicker" ).datepicker();
+	
+		$("ul.subnav").parent().append("<span></span>");
+		$("ul.topnav li span").click(function() {
+			$(this).parent().find("ul.subnav").slideDown('fast').show();
+			$(this).parent().hover(function(){}, function(){$(this).parent().find("ul.subnav").slideUp('fast');});
+			}).hover(function() {
+				$(this).addClass("subhover");
+			}, function(){
+				$(this).removeClass("subhover");
+		});
+		
+		$("#divAjaxRetornoPequeno").dialog({autoOpen:false,
+			bgiframe: true, resizable: false, height: 180, width: 340, modal: true,
+			Overlay: {backgroundColor: '#000', opacity: 0.5},
+			buttons: {'Sair': function(){$(this).dialog('close');}}
+		});
+
+		$("#divAjaxRetornoGrande").dialog({autoOpen:false,
+			bgiframe: true, resizable: false, height: 580, width: 945, modal: true,
+			Overlay: {backgroundColor: '#000', opacity: 0.5},
+			buttons: {'Sair': function(){$(this).dialog('close');},
+					  'Imprimir'	: function() {$(this).dialog('close');printPage('divAjaxRetornoGrande');}
+			}
+		});
+	
+		$("#opcaoLogin").click(function() {
+			$('#divLogin').dialog({autoOpen:false, bgiframe:true, resizable:false, height: 180, width: 340, modal: true,
+				overlay:{backgroundColor:'#000', opacity:0.5},
+				buttons:{
+					Entrar: function() {$(this).dialog('close');fazerLogin();}
+				}
+			});
+			$('#divLogin').dialog('open');
+		});
+		
+	});
+
+	function padPrepara(){
+		$.ajax({
+			type	: 'POST', datatype: 'php', url: 'Geral.php', data: '',
+			async	: true, cache: true, timeout: 12000,
+			complete: function(resposta){$('#divExterna').append(resposta.responseText);}
+		});
+	}	
+			
+	function fazerLogin(){
+		$.ajax({
+		type	: 'POST', datatype: 'php', url: 'Seguranca.bus.php',
+		data	: ' Operacao=VerificarSenha'
+				+ '&frmUsuario=' + $('#frmUsuario').val()
+				+ '&frmSenha='  + $('#frmSenha').val(),
+		async	: true, cache: true, timeout: 120000,
+		complete: function(resposta){
+				$('#divLogin').dialog('close');
+				$('#divRetornoPermissaoDeAcesso').empty().append(resposta.responseText).css({display:'block'});
+				verificarPermissaoDeAcesso();
+			}
+		});
+	}
+	function verificarPermissaoDeAcesso(){
+		$.ajax({
+			type	: 'POST', datatype: 'php', url: 'Seguranca.bus.php', data: 'Operacao=VerificarPermissao',
+			async	: true, cache: true, timeout: 120000,
+			complete: function(resposta){
+				$('#divRetornoPermissaoDeAcesso').empty().append(resposta.responseText).css({display:'block'});
+				if ($('#frmPermissaoDeAcesso').val() == 'PermissaoAutorizada'){
+					$('#divEmpresa').empty().append("<a class='fontEmpresa'>Bem vindo<br>" + $('#frmNomeDoUsuario').val() +"</a>");
+				}
+				if ($('#frmPermissaoDeAcesso').val() != 'PermissaoAutorizada'){
+					$('#divLogin').dialog({autoOpen:false, bgiframe:true, resizable:false, height: 180, width: 340, modal: true,
+					overlay:{backgroundColor:'#000', opacity:0.5},
+					buttons:{
+						Entrar: function() {$(this).dialog('close');fazerLogin();}
+					}
+				});
+				$('#divLogin').dialog('open');
+				}
+			}
+		});
+
+	}
+
+	function printPage(idOfWebPart){
+		var printElement = document.getElementById(idOfWebPart);
+		$(printElement).printArea({mode: "popup", popClose: false});
+	};	
+	
+	function validaValorFinanceiro(pVal){
+		var reMoeda = /^\d{1,3}(\.\d{3})*\,\d{2}$/;
+		return reMoeda.test(pVal);
+	}
+	function float2moeda(num) {
+		x = 0;
+		if(num<0) {num = Math.abs(num);x = 1;}
+		if(isNaN(num)) num = "0";
+		cents = Math.floor((num*100+0.5)%100);
+		num = Math.floor((num*100+0.5)/100).toString();
+	   if(cents < 10) cents = "0" + cents;
+		  for (var i = 0; i < Math.floor((num.length-(1+i))/3); i++)
+			 num = num.substring(0,num.length-(4*i+3))+'.'
+				   +num.substring(num.length-(4*i+3));
+		ret = num + ',' + cents;			   
+		if (x == 1) ret = ' - ' + ret;return ret;
+	}
+	function moeda2float(moeda){
+	   moeda = moeda.replace(".","");
+	   moeda = moeda.replace(",",".");
+	   return parseFloat(moeda);
+	}	
+	
+</script>
+
+</head>
+<body onload='padPrepara()'>
+
+<form id="myUploadForm" enctype="multipart/form-data" action="xxx.php" method="POST"></form>
+
+<div id='divPrincipal'>
+	<div id='divMenu'>
+		<ul class="topnav">
+			<li>
+				<a href="#">Principal</a>
+				<ul class="subnav">
+				<li><a href="#" id='opcaoEditarTexto'>Editar texto</a></li> 
+				<li><a href="#" id='opcaoEnviarCorreio'>Enviar correio</a></li> 
+				</ul>
+			</li>
+<!--			<li>
+				<a href="#">Arquivo</a>
+				<ul class="subnav">
+				<li><a href="#" id='opcaoProcessarRetornoBB'>Processar retorno BB</a></li> 
+				</ul>
+			</li>			-->
+		</ul>
+	</div> <!-- FIM divMenu -->
+
+	<div id='divControle'>
+		<table width='100%'>
+			<tr>
+				<td valign='top'><div id='divLogoMarca'><b style="color:#c0c0c0;">&nbsp&nbsp&nbsp Gerenciador</b></div></td>
+				<td valign='top'><div id='divEmpresa'><a style="color:#c0c0c0;">Mala direta<br>Gerenciar o envio de correio eletrônico</a></div></td>
+				<td valign='top'><div id='divVersao'><a style="color:#c0c0c0;"><br>Versão: 1.0</a></div></td>
+			<tr>
+		</table>
+	</div> <!-- FIM divControle -->
+	
+	<table>
+		<tr>
+			<td valign='top'>
+				<div id='divAtalhos'>
+					<div class='cor2' style="text-align: center;"><a class='fonte1'>Atalhos</a></div>
+					<div class="i3Style" id='opcaoAtalhoEditarTexto'><img src='img/editartexto.png' alt=''  width='20px' class='left' />&nbsp&nbsp Editar texto</div> 
+					<div class="i3Style" id='opcaoAtalhoCorreio'><img src='img/correio.png' alt=''  width='20px' class='left' />&nbsp&nbsp Enviar correio</div> 
+				</div>
+			</td>
+			<td valign='top'>
+				<div id='divCentro'></div> 
+			</td>
+		</tr>
+	</table>	
+	<div id='divRodape'>Copyright © 2014 &nbsp|&nbsp José Maria &nbsp|&nbsp jmosousa@yahoo.com.br</div>
+	<div id='divExterna'></div>
+</div> <!-- FIM divPrincipal -->
+<div id='divAjaxRetornoPequeno' style='display:none'></div>
+<div id='divAjaxRetornoGrande'  style='display:none' ></div>
+<div id='divLogin' title='Permissão de usuário' style='display:none'>
+	<table width='100%'>
+		<tr><td align='right'>Usuário</td><td><input type='text'     id='frmUsuario' value=''></td></tr>
+		<tr><td align='right'>Senha  </td><td><input type='password' id='frmSenha'   value=''></td></tr>
+	</table>
+</div>
+<div id='divRetornoPermissaoDeAcesso' style='display:none'></div>
+</body>
+<script type='text/javascript'>
+	verificarPermissaoDeAcesso();
+</script>	
+</html>
