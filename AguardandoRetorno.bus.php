@@ -8,7 +8,7 @@ $mes = date("m");
 $mesExtenso = gmstrftime("%B", time());
 $ano = date("Y");
 $dataReferencia = "'".$ano."-".$mes."-".$dia."'";
-// teste
+
 if ($_POST['parametroBanco'] == 1){$nomeBanco = "BB - Banco do Brasil";};
 if ($_POST['parametroBanco'] == 2){$nomeBanco = "BRB - Banco de Brasília";};
 if ($_POST['parametroBanco'] == 3){$nomeBanco = "CEF - Caixa Economica Federal";};
